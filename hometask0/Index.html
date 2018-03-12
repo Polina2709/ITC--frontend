@@ -10,73 +10,70 @@
 
   <p>Начало документа...</p>
   <script>
-    alert( 'Привет, Мир!' );
-
     function plus(...args) {
       let result = 0;
 
       for (let i = 0; i < arguments.length; i++) {
-           result += arguments[i];
-        }
+        result += arguments[i];
+      }
 
       return result;
     }
-    console.log( plus(2, 3, 5, 7, 3) );
+    console.log(plus(2, 3, 5, 7, 3));
 
     function multiplyAll(...args) {
-      console.log (args.reduce (function(a, b) {
-          return  a * b;
-        }));
+      return args.reduce(function (a, b) {
+        return a * b;
+      });
     }
-    multiplyAll(3, 10, 5);
+    console.log(multiplyAll(3, 10, 5))
 
-    function mergeArrays(array1, array2) { 
-      alert( array1.concat (array2) );
-      return array1.concat (array2);
+    function mergeArrays(array1, array2) {
+      return array1.concat(array2);
     }
-    
-    console.log (mergeArrays ([1,2,3],[4, 5]) );
-     
+
+    console.log(mergeArrays([1, 2, 3], [4, 5]));
+
     let people = [
       { name: 'Аня', sex: 'женский', fav_movie: 'Легенда 17' },
-      { name: 'Маша',sex: 'женский', fav_movie: 'Пока не сыграл в ящик' },
+      { name: 'Маша', sex: 'женский', fav_movie: 'Пока не сыграл в ящик' },
       { name: 'Максим', sex: 'мужской', fav_movie: 'Зеленая миля' },
       { name: 'Владимир', sex: 'мужской', fav_movie: 'Леон' }
     ];
     function filterFemales(people) {
-      return people.filter (people => people.sex == "женский");
+      return people.filter(people => people.sex == "женский");
     }
-    console.log (filterFemales (people) );
+    console.log(filterFemales(people));
 
     function getQuadrant(x, y) {
       if (x > 0 && y > 0) {
         return "первая четверть";
-      } 
+      }
       else if (x < 0 && y > 0) {
         return "вторая четверть";
       }
       else if (x < 0 && y < 0) {
         return "третья четверть";
-      } 
+      }
       else if (x > 0 && y < 0) {
         return "четвертая четерть";
       }
       else if (x == 0 && y == 0) {
         return "начало координат";
       }
-      else if (x == 0 && y !== 0) {
+      else if (x == 0 && y != 0) {
         return "точка находится на оси Y";
-      } 
-      else if (x !== 0 && y == 0) {
+      }
+      else if (x != 0 && y == 0) {
         return "точка находится на оси Х";
       }
 
     }
-    console.log (getQuadrant(1,2));
-    console.log (getQuadrant(-1,2));
-    console.log (getQuadrant(-2,-3));
-    console.log (getQuadrant(4,-7));
-    console.log (getQuadrant(0,0));
+    console.log(getQuadrant(1, 2));
+    console.log(getQuadrant(-1, 2));
+    console.log(getQuadrant(-2, -3));
+    console.log(getQuadrant(4, -7));
+    console.log(getQuadrant(0, 0));
 
   </script>
 
