@@ -10,6 +10,7 @@
 
   <p>Начало документа...</p>
   <script>
+
     function plus(...args) {
       let result = 0;
 
@@ -22,11 +23,11 @@
     console.log(plus(2, 3, 5, 7, 3));
 
     function multiplyAll(...args) {
-      return args.reduce(function (a, b) {
+      console.log(args.reduce(function (a, b) {
         return a * b;
-      });
+      }));
     }
-    console.log(multiplyAll(3, 10, 5))
+    multiplyAll(3, 10, 5);
 
     function mergeArrays(array1, array2) {
       return array1.concat(array2);
@@ -34,11 +35,11 @@
 
     console.log(mergeArrays([1, 2, 3], [4, 5]));
 
-    let people = [
-      { name: 'Аня', sex: 'женский', fav_movie: 'Легенда 17' },
-      { name: 'Маша', sex: 'женский', fav_movie: 'Пока не сыграл в ящик' },
-      { name: 'Максим', sex: 'мужской', fav_movie: 'Зеленая миля' },
-      { name: 'Владимир', sex: 'мужской', fav_movie: 'Леон' }
+    const people = [
+      { name: 'Аня', sex: 'женский', favMovie: 'Легенда 17' },
+      { name: 'Маша', sex: 'женский', favMovie: 'Пока не сыграл в ящик' },
+      { name: 'Максим', sex: 'мужской', favMovie: 'Зеленая миля' },
+      { name: 'Владимир', sex: 'мужской', favMovie: 'Леон' }
     ];
     function filterFemales(people) {
       return people.filter(people => people.sex == "женский");
@@ -61,10 +62,10 @@
       else if (x == 0 && y == 0) {
         return "начало координат";
       }
-      else if (x == 0 && y != 0) {
+      else if (x == 0 && y !== 0) {
         return "точка находится на оси Y";
       }
-      else if (x != 0 && y == 0) {
+      else if (x !== 0 && y == 0) {
         return "точка находится на оси Х";
       }
 
