@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <div id="content"></div>
+  <script>
+    fetch('https://www.reddit.com/top.json')
+      .then(page => page.json())
+      .then(myobj => myobj.data.children)
+      .then(qwer => {
+        let posts = ''
+        for (i = 0; i < qwer.length; i++) {
+          let photo
+          if (qwer[i].data.thumbnail.includes(".jpg") || qwer[i].data.thumbnail.includes(".png")) {
+            photo = qwer[i].data.thumbnail
+          } else {
+            photo = "https://pp.userapi.com/c626516/v626516142/2fc37/AXZBvFDyDQA.jpg"
+          }
+          post = `<img width="140px" height="140px" src="${photo}"/>
+<a href="${qwer[i].data.permalink}">${qwer[i].data.title}</a><br>
+          `
+          posts += post
+        }
+        const div = document.getElementById("content")
+        div.innerHTML = posts
+      })
+  </script>
+
+
+</body>
+
+</html>
